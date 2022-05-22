@@ -47,5 +47,5 @@ jobs:
       - name: Build and test with Maven under Batect
         run: ./batect build
 
-#       - name: Execute run script
-#         run: ./batect -o quiet demo
+      - name: Execute run script
+        run: ./batect -o quiet demo
