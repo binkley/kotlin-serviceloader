@@ -1,3 +1,7 @@
 package demo
 
-class PirateFoo : Foo
+class PirateFoo : Foo {
+    override fun doIt() {
+        println("AAARRRGGGHHH!")
+    }
+}

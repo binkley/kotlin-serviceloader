@@ -1,3 +1,5 @@
 package demo
 
-interface Foo
+interface Foo {
+    fun doIt()
+}
