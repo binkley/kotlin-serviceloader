@@ -2,9 +2,9 @@
 # shellcheck disable=SC2214,SC2215
 
 # Edit these to suit
-readonly package=hm.binkley.labs
-readonly artifactId=kotlin-serviceloader
+readonly artifactId=kotlin-serviceloader-demo
 readonly version=0-SNAPSHOT
+readonly module=kotlin-serviceloader-demo
 jvm_flags=(--add-opens java.base/java.lang=ALL-UNNAMED)
 # No editable parts below here
 
@@ -22,9 +22,6 @@ Usage: $progname [OPTIONS] [-- ARGUMENTS]
 Runs a single-jar JVM project.
 
 Options:
-  -C, --alt-class=CLASS
-                 execute CLASS as the alternate main class, otherwise assume
-                 the jar is executable
   -d, --debug    print script execution to STDERR
   -h, --help     display this help and exit
 
@@ -63,23 +60,18 @@ function mangle-kotlin-classname() {
     echo "${parts[*]}"
 }
 
-function runtime-classname() {
-    mangle-kotlin-classname "$package.$alt_class"
-}
-
 function rebuild-if-needed() {
     # TODO: Rebuild if build script is newer than jar
-    [[ -e "$jar" && -z "$(find src/main -type f -newer "$jar")" ]] && return
+    # TODO: Support multi-module
+    # [[ -e "$jar" && -z "$(find src/main -type f -newer "$jar")" ]] && return
 
     ./mvnw --strict-checksums -Dmaven.test.skip=true package
 }
 
-alt_class=''
 debug=false
-while getopts :C:a:b:dhl:-: opt; do
+while getopts :dh-: opt; do
     [[ $opt == - ]] && opt=${OPTARG%%=*} OPTARG=${OPTARG#*=}
     case $opt in
-    C | alt-class) alt_class=$OPTARG ;;
     d | debug) debug=true ;;
     h | help)
         print-help
@@ -99,15 +91,9 @@ if [[ ! -x "./mvnw" ]]; then
     echo "$progname: Not executable: ./mvnw" >&2
     exit 2
 fi
-readonly jar=target/$artifactId-$version-jar-with-dependencies.jar
+readonly jar=$module/target/$artifactId-$version-jar-with-dependencies.jar
 
-case "$alt_class" in
-'') jvm_flags=("${jvm_flags[@]}" -jar "$jar") ;;
-*)
-    readonly runtime_classname="$(runtime-classname "$package.$alt_class")"
-    jvm_flags=("${jvm_flags[@]}" -cp "$jar" "$runtime_classname")
-    ;;
-esac
+jvm_flags=("${jvm_flags[@]}" -jar "$jar")
 
 rebuild-if-needed
 
