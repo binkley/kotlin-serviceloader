@@ -69,14 +69,13 @@
         <maven-project-info-reports-plugin.version>3.4.0</maven-project-info-reports-plugin.version>
         <maven-release-plugin.version>3.0.0-M6</maven-release-plugin.version>
         <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
-        <maven-site-plugin.version>4.0.0-M2</maven-site-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
         <maven.test.skip>false</maven.test.skip> <!-- Make linter happy -->
         <maven.version>3.8.4</maven.version>
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>1.0.0</pitest-junit5-plugin.version>
-        <pitest-maven.version>1.9.3</pitest-maven.version>
+        <pitest-maven.version>1.9.4</pitest-maven.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
@@ -420,11 +419,6 @@
                 <version>${detekt-maven-plugin.version}</version>
                 <configuration>
                     <config>config/detekt.yml</config>
-                    <report>
-                        <report>
-                            html:${basedir}/target/site/detekt/index.html
-                        </report>
-                    </report>
                 </configuration>
                 <executions>
                     <execution>
@@ -468,11 +462,6 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>${maven-site-plugin.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>${maven-deploy-plugin.version}</version>
             </plugin>
@@ -491,92 +480,10 @@
                     </version>
                 </plugin>
                 <plugin>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>${maven-site-plugin.version}</version>
-                </plugin>
-                <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
     </build>
-
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${maven-project-info-reports-plugin.version}
-                </version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>index</report>
-                            <report>ci-management</report>
-                            <report>issue-management</report>
-                            <report>licenses</report>
-                            <report>scm</report>
-                            <report>summary</report>
-                            <report>team</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>${maven-surefire-plugin.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>${maven-surefire-plugin.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${jacoco-maven-plugin.version}</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>report</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-            <plugin>
-                <groupId>org.pitest</groupId>
-                <artifactId>pitest-maven</artifactId>
-                <version>${pitest-maven.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>com.github.gantsign.maven</groupId>
-                <artifactId>ktlint-maven-plugin</artifactId>
-                <version>${ktlint-maven-plugin.version}</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.owasp</groupId>
-                <artifactId>dependency-check-maven</artifactId>
-                <version>${dependency-check-maven.version}</version>
-                <configuration>
-                    <name>Dependency Check Report</name>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>${versions-maven-plugin.version}</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>dependency-updates-report</report>
-                            <report>plugin-updates-report</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-        </plugins>
-    </reporting>
 </project>
