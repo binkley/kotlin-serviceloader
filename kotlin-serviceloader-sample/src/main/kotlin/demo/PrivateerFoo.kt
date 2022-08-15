@@ -2,7 +2,7 @@ package demo
 
 @Suppress("unused")
 class PrivateerFoo {
-    class Static : Foo {
+    class IAmAnInnerClass : Foo {
         override fun doIt() {
             println("For Queen and Country!")
         }
