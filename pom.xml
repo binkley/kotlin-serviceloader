@@ -45,7 +45,7 @@
         <coverage.lines>100</coverage.lines>
         <coverage.instructions>100</coverage.instructions>
         <coverage.mutation>100</coverage.mutation>
-        <dependency-check-maven.version>7.2.0</dependency-check-maven.version>
+        <dependency-check-maven.version>7.2.1</dependency-check-maven.version>
         <detekt-maven-plugin.version>1.21.0.1</detekt-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
@@ -54,7 +54,7 @@
         <kotest.version>5.4.2</kotest.version>
         <kotlin.code.style>official</kotlin.code.style>
         <kotlin.compiler.jvmTarget>${jdk.version}</kotlin.compiler.jvmTarget>
-        <kotlin.version>1.7.10</kotlin.version>
+        <kotlin.version>1.7.20-RC</kotlin.version>
         <ktlint-maven-plugin.version>1.15.1</ktlint-maven-plugin.version>
         <lombok.version>1.18.24</lombok.version>
         <main.class>demo.MainKt</main.class>
@@ -75,7 +75,7 @@
         <maven.version>3.8.4</maven.version>
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>1.0.0</pitest-junit5-plugin.version>
-        <pitest-maven.version>1.9.4</pitest-maven.version>
+        <pitest-maven.version>1.9.5</pitest-maven.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
