@@ -50,8 +50,8 @@
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
         <jdk.version>17</jdk.version>
-        <junit.version>5.9.0</junit.version>
-        <kotest.version>5.4.2</kotest.version>
+        <junit.version>5.9.1</junit.version>
+        <kotest.version>5.5.0</kotest.version>
         <kotlin.code.style>official</kotlin.code.style>
         <kotlin.compiler.jvmTarget>${jdk.version}</kotlin.compiler.jvmTarget>
         <kotlin.version>1.7.20-RC</kotlin.version>
@@ -74,7 +74,7 @@
         <maven.test.skip>false</maven.test.skip> <!-- Make linter happy -->
         <maven.version>3.8.4</maven.version>
         <owasp.skip>false</owasp.skip>
-        <pitest-junit5-plugin.version>1.0.0</pitest-junit5-plugin.version>
+        <pitest-junit5-plugin.version>1.1.0</pitest-junit5-plugin.version>
         <pitest-maven.version>1.9.6</pitest-maven.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
