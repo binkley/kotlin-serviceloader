@@ -6,6 +6,7 @@
 
 [![build](https://github.com/binkley/kotlin-serviceloader/workflows/build/badge.svg)](https://github.com/binkley/kotlin-serviceloader/actions)
 [![issues](https://img.shields.io/github/issues/binkley/kotlin-serviceloader.svg)](https://github.com/binkley/kotlin-serviceloader/issues/)
+[![pull requests](https://img.shields.io/github/issues-pr/binkley/kotlin-serviceloader.svg)](https://github.com/binkley/kotlin-serviceloader/pulls)
 [![vulnerabilities](https://snyk.io/test/github/binkley/kotlin-serviceloader/badge.svg)](https://snyk.io/test/github/binkley/kotlin-serviceloader)
 [![license](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
