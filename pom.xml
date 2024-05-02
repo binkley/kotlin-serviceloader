@@ -49,7 +49,7 @@
         <detekt-maven-plugin.version>1.23.5</detekt-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
-        <jdk.version>17</jdk.version>
+        <jdk.version>21</jdk.version>
         <junit.version>5.11.0-M1</junit.version>
         <kotest.version>5.8.1</kotest.version>
         <kotlin.code.style>official</kotlin.code.style>
