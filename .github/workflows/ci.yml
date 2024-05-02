@@ -12,7 +12,7 @@ on:
 
 jobs:
   build-maven:
-    name: Builds and tests for Maven under Batect
+    name: build
     runs-on: ubuntu-latest
 
     steps:
